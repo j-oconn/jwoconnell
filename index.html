@@ -193,6 +193,87 @@
       padding-bottom: 0;
     }
 
+    /* ── Experience peek (faded preview bullet) ── */
+    .exp-peek {
+      position: relative;
+      overflow: hidden;
+    }
+    .exp-peek::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      background: linear-gradient(to bottom, transparent 0%, var(--bg) 90%);
+      pointer-events: none;
+    }
+    .exp-peek.is-hidden {
+      display: none;
+    }
+
+    /* ── Experience collapse ── */
+    .exp-collapsed {
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.4s ease;
+    }
+    .exp-collapsed.is-open {
+      max-height: 2000px;
+    }
+    .exp-toggle-wrap {
+      position: relative;
+      margin-top: -40px;
+      padding-top: 40px;
+    }
+    .exp-toggle-wrap::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 40px;
+      background: linear-gradient(to bottom, transparent, var(--bg));
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    .exp-toggle-wrap.is-open::before {
+      opacity: 0;
+    }
+    .exp-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 4px;
+      margin-bottom: 32px;
+      position: relative;
+      z-index: 1;
+      background: var(--accent-mid);
+      border: 1px solid var(--accent-mid);
+      border-radius: 4px;
+      padding: 8px 16px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #fff;
+      cursor: pointer;
+      transition: background 0.15s, border-color 0.15s;
+    }
+    .exp-toggle:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+    .exp-toggle-icon {
+      display: inline-block;
+      transition: transform 0.3s ease;
+      font-style: normal;
+    }
+    .exp-toggle.is-open .exp-toggle-icon {
+      transform: rotate(180deg);
+    }
+
     .exp-header {
       display: flex;
       justify-content: space-between;
@@ -390,7 +471,7 @@
 
   <!-- ── Experience ── -->
   <section class="section" aria-labelledby="experience-label">
-    <p class="section-label" id="experience-label">Experience</p>
+    <p class="section-label" id="experience-label">Professional Experience</p>
 
     <div class="exp-item">
       <div class="exp-header">
@@ -415,50 +496,88 @@
       <p class="exp-role">Senior Product Manager · San Francisco, CA (Remote)</p>
       <ul class="exp-bullets">
         <li>Owned product strategy for global identity, permissions, privacy, and security platforms powering secure digital experiences across 50+ international markets.</li>
-        <li>Designed and shipped scalable consent and permissions management systems enabling users to securely manage account identities and data access, boosting revenue by ~$100M.</li>
-        <li>Led migration and modernization of marketing consent API endpoints, improving platform interoperability and governance controls and driving ~$30M in incremental revenue.</li>
-        <li>Managed high-priority identity data and athlete access systems implementing secure access controls and lifecycle governance protecting assets valued at ~$80M.</li>
-        <li>Partnered with Legal, Security, and UX to translate complex regulatory and data residency requirements into extensible platform capabilities aligned with global compliance standards.</li>
       </ul>
+
+      <div class="exp-peek" id="exp-peek">
+        <ul class="exp-bullets" style="margin-top:8px">
+          <li>Designed and shipped scalable consent and permissions management systems enabling users to securely manage account identities and data access, boosting revenue by ~$100M.</li>
+        </ul>
+      </div>
+
+      <div class="exp-collapsed" id="exp-more">
+        <ul class="exp-bullets" style="margin-top:8px">
+          <li>Designed and shipped scalable consent and permissions management systems enabling users to securely manage account identities and data access, boosting revenue by ~$100M.</li>
+          <li>Led migration and modernization of marketing consent API endpoints, improving platform interoperability and governance controls and driving ~$30M in incremental revenue.</li>
+          <li>Managed high-priority identity data and athlete access systems implementing secure access controls and lifecycle governance protecting assets valued at ~$80M.</li>
+          <li>Partnered with Legal, Security, and UX to translate complex regulatory and data residency requirements into extensible platform capabilities aligned with global compliance standards.</li>
+        </ul>
+      </div>
     </div>
 
-    <div class="exp-item">
-      <div class="exp-header">
-        <span class="exp-company">CoStar Group — BizBuySell.com</span>
-        <span class="exp-dates">Oct 2016 – Dec 2019</span>
+    <div class="exp-collapsed" id="exp-more-entries">
+      <div class="exp-item">
+        <div class="exp-header">
+          <span class="exp-company">CoStar Group — BizBuySell.com</span>
+          <span class="exp-dates">Oct 2016 – Dec 2019</span>
+        </div>
+        <p class="exp-role">Product Manager · San Francisco, CA</p>
+        <ul class="exp-bullets">
+          <li>Owned product roadmap and vision for marketplace platform — delivered capabilities that increased product adoption by 50%.</li>
+          <li>Built API microservices for demand-side product features, enabling cross-site integrations and $100K in incremental annual revenue.</li>
+          <li>Managed A/B tests and ecommerce funnel optimizations, improving conversions by 10% and growing monthly cross-sell revenue by $30K.</li>
+        </ul>
       </div>
-      <p class="exp-role">Product Manager · San Francisco, CA</p>
-      <ul class="exp-bullets">
-        <li>Owned product roadmap and vision for marketplace platform — delivered capabilities that increased product adoption by 50%.</li>
-        <li>Built API microservices for demand-side product features, enabling cross-site integrations and $100K in incremental annual revenue.</li>
-        <li>Managed A/B tests and ecommerce funnel optimizations, improving conversions by 10% and growing monthly cross-sell revenue by $30K.</li>
-      </ul>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <span class="exp-company">Perricone MD</span>
+          <span class="exp-dates">Jul 2015 – Aug 2016</span>
+        </div>
+        <p class="exp-role">Web Producer · San Francisco, CA</p>
+        <ul class="exp-bullets">
+          <li>Defined product roadmap, drove A/B testing and funnel optimizations — increased average order value 20% and ROI by 10%.</li>
+          <li>Led $120K CRM implementation, improving email campaign capabilities and boosting weekly revenue by $10K.</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <span class="exp-company">Genentech, Inc.</span>
+          <span class="exp-dates">Oct 2011 – Jun 2015</span>
+        </div>
+        <p class="exp-role">Marketing Web Operations Manager · South San Francisco, CA</p>
+        <ul class="exp-bullets">
+          <li>Owned Salesforce web application products for vendor management; led Agile engineering projects, exceeded onboarding goals and reduced management costs by $122K.</li>
+          <li>Applied Excel, SQL, and SAS to build analytics reports, reducing average event costs by $5K across $5.3M in annual marketing spend.</li>
+        </ul>
+      </div>
     </div>
 
-    <div class="exp-item">
-      <div class="exp-header">
-        <span class="exp-company">Perricone MD</span>
-        <span class="exp-dates">Jul 2015 – Aug 2016</span>
-      </div>
-      <p class="exp-role">Web Producer · San Francisco, CA</p>
-      <ul class="exp-bullets">
-        <li>Defined product roadmap, drove A/B testing and funnel optimizations — increased average order value 20% and ROI by 10%.</li>
-        <li>Led $120K CRM implementation, improving email campaign capabilities and boosting weekly revenue by $10K.</li>
-      </ul>
-    </div>
-
-    <div class="exp-item">
-      <div class="exp-header">
-        <span class="exp-company">Genentech, Inc.</span>
-        <span class="exp-dates">Oct 2011 – Jun 2015</span>
-      </div>
-      <p class="exp-role">Marketing Web Operations Manager · South San Francisco, CA</p>
-      <ul class="exp-bullets">
-        <li>Owned Salesforce web application products for vendor management; led Agile engineering projects, exceeded onboarding goals and reduced management costs by $122K.</li>
-        <li>Applied Excel, SQL, and SAS to build analytics reports, reducing average event costs by $5K across $5.3M in annual marketing spend.</li>
-      </ul>
+    <div class="exp-toggle-wrap" id="exp-toggle-wrap">
+      <button class="exp-toggle" id="exp-toggle" onclick="toggleExp()" aria-expanded="false" aria-controls="exp-more">
+        <span class="exp-toggle-icon">+</span> More experience
+      </button>
     </div>
   </section>
+
+  <script>
+    function toggleExp() {
+      var more = document.getElementById('exp-more');
+      var moreEntries = document.getElementById('exp-more-entries');
+      var peek = document.getElementById('exp-peek');
+      var btn = document.getElementById('exp-toggle');
+      var wrap = document.getElementById('exp-toggle-wrap');
+      var open = more.classList.toggle('is-open');
+      moreEntries.classList.toggle('is-open', open);
+      peek.classList.toggle('is-hidden', open);
+      btn.classList.toggle('is-open', open);
+      wrap.classList.toggle('is-open', open);
+      btn.setAttribute('aria-expanded', open);
+      btn.innerHTML = open
+        ? '<span class="exp-toggle-icon">−</span> Less'
+        : '<span class="exp-toggle-icon">+</span> More experience';
+    }
+  </script>
 
   <!-- ── Credentials ── -->
   <section class="section" aria-labelledby="credentials-label">
