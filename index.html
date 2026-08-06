@@ -298,20 +298,30 @@
       transform: rotate(180deg);
     }
 
+    .exp-company {
+      display: block;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-head);
+      letter-spacing: -0.01em;
+      margin-bottom: 2px;
+    }
+
     .exp-header {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
       flex-wrap: wrap;
       gap: 4px;
-      margin-bottom: 2px;
+      margin-bottom: 8px;
     }
 
-    .exp-company {
-      font-size: 15px;
-      font-weight: 600;
-      color: var(--text-head);
-      letter-spacing: -0.01em;
+    .exp-role {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--accent-mid);
+      font-family: 'JetBrains Mono', monospace;
+      letter-spacing: 0.04em;
     }
 
     .exp-dates {
@@ -322,13 +332,12 @@
       white-space: nowrap;
     }
 
-    .exp-role {
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--accent-mid);
-      font-family: 'JetBrains Mono', monospace;
-      letter-spacing: 0.04em;
-      margin-bottom: 12px;
+    .exp-summary {
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--text-body);
+      line-height: 1.65;
+      margin-bottom: 14px;
     }
 
     .exp-bullets {
@@ -503,11 +512,12 @@
     <p class="section-label" id="experience-label">Professional Experience</p>
 
     <div class="exp-item">
+      <span class="exp-company">Nike, Inc., San Francisco, CA (Fully Remote)</span>
       <div class="exp-header">
-        <span class="exp-company">Nike, Inc. — Enterprise Identity &amp; Security Platforms</span>
-        <span class="exp-dates">Aug 2023 – Present</span>
+        <span class="exp-role">Lead Product Manager – Enterprise Identity and Security Platforms</span>
+        <span class="exp-dates">2023 – 2026</span>
       </div>
-      <p class="exp-role">Lead Product Manager · San Francisco, CA (Remote)</p>
+      <p class="exp-summary">Drove product vision, strategy, and roadmaps for global data access and security infrastructure, delivering identity and access management (IAM) capabilities, securing enterprise and consumer data, and supporting ~$9B in annual transactions.</p>
       <ul class="exp-bullets">
         <li>Owned product vision, strategy, and roadmaps for Nike's global enterprise authentication &amp; authorization platforms, securing consumer &amp; enterprise digital experiences across multi-region enterprise cloud infrastructure supporting ~$9B in annual transactions.</li>
         <li>Led modernization of identity platforms through implementing granular service-to-service auth capabilities enabling secure, compliant access controls across global ecosystems, unlocking ~$1.5B in revenue.</li>
@@ -518,11 +528,12 @@
     </div>
 
     <div class="exp-item">
+      <span class="exp-company">Nike, Inc., San Francisco, CA (Fully Remote)</span>
       <div class="exp-header">
-        <span class="exp-company">Nike, Inc. — Identity, Privacy &amp; Security Platforms</span>
-        <span class="exp-dates">Feb 2020 – Aug 2023</span>
+        <span class="exp-role">Senior Product Manager – Identity, Privacy and Security Platforms</span>
+        <span class="exp-dates">2020 – 2023</span>
       </div>
-      <p class="exp-role">Senior Product Manager · San Francisco, CA (Remote)</p>
+      <p class="exp-summary">Led global identity, privacy, and security platforms, owning account, consent, and access foundations enabling secure, compliant digital experiences for 200M+ users across 50+ international markets.</p>
       <ul class="exp-bullets">
         <li>Managed product vision and strategy for global identity, permissions, privacy, and security platforms, owning account &amp; access foundations powering secure, compliant digital experiences across 50+ international markets.</li>
       </ul>
@@ -545,11 +556,12 @@
 
     <div class="exp-collapsed" id="exp-more-entries">
       <div class="exp-item">
+        <span class="exp-company">CoStar Group – BizBuySell.com, San Francisco, CA</span>
         <div class="exp-header">
-          <span class="exp-company">CoStar Group — BizBuySell.com</span>
-          <span class="exp-dates">Oct 2016 – Dec 2019</span>
+          <span class="exp-role">Product Manager – Online Marketplace</span>
+          <span class="exp-dates">2016 – 2019</span>
         </div>
-        <p class="exp-role">Product Manager · San Francisco, CA</p>
+        <p class="exp-summary">Owned marketplace platform strategy for business buyers and sellers.</p>
         <ul class="exp-bullets">
           <li>Owned product vision and roadmap for marketplace platform capabilities serving business buyers and sellers; led cross-functional teams to develop API integrations supporting new demand-side product experiences, increasing adoption by 50%.</li>
           <li>Managed site product integrations enabling users to advertise across a network of domains and increase impressions, boosting annual revenue by ~$100K.</li>
@@ -558,11 +570,12 @@
       </div>
 
       <div class="exp-item">
+        <span class="exp-company">Perricone MD, San Francisco, CA</span>
         <div class="exp-header">
-          <span class="exp-company">Perricone MD</span>
-          <span class="exp-dates">Jul 2015 – Aug 2016</span>
+          <span class="exp-role">Web Producer – Ecommerce Platform</span>
+          <span class="exp-dates">2015 – 2016</span>
         </div>
-        <p class="exp-role">Web Producer · San Francisco, CA</p>
+        <p class="exp-summary">Managed product roadmap, drove platform enhancements based on product strategy, vision, and user experience.</p>
         <ul class="exp-bullets">
           <li>Defined product roadmap, drove enhancements based on platform strategy, vision, and user experience; led A/B tests and Google Analytics funnels to measure incremental revenue opportunities, increasing average order value 20% and expected ROI by 10%.</li>
           <li>Led $120K CRM implementation resulting in improved email campaign capabilities and boosted monthly revenue by $30K.</li>
@@ -570,11 +583,12 @@
       </div>
 
       <div class="exp-item">
+        <span class="exp-company">Genentech, Inc., South San Francisco, CA</span>
         <div class="exp-header">
-          <span class="exp-company">Genentech, Inc.</span>
-          <span class="exp-dates">Oct 2011 – Jun 2015</span>
+          <span class="exp-role">Marketing Web Operations Manager – Vendor Management and Data Compliance Platforms</span>
+          <span class="exp-dates">2011 – 2015</span>
         </div>
-        <p class="exp-role">Marketing Web Operations Manager · South San Francisco, CA</p>
+        <p class="exp-summary">Owned vendor-facing Salesforce web applications in regulated pharmaceutical environment, translating business and regulatory requirements into platform capabilities and managing Agile engineering delivery.</p>
         <ul class="exp-bullets">
           <li>Owned Salesforce web applications for vendors, gathered requirements and managed Agile engineering projects, exceeded onboarding goals and reduced overhead costs by $122K.</li>
           <li>Utilized Excel and SQL to create analytics reports, reduced average event costs by $5K while maintaining 99% data accuracy.</li>
